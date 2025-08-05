@@ -1,6 +1,8 @@
 import Modal from "@/components/modal";
+import { getWorks } from "@/actions/getWorks";
 
-export default function WorksModal() {
+export default async function WorksModal() {
+  const works = await getWorks();
   return (
     <Modal title="웍스">
       <div className="space-y-4">

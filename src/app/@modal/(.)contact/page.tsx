@@ -1,6 +1,9 @@
 import Modal from "@/components/modal";
+import { getAuthor } from "@/actions/getAuthor";
 
-export default function ContactModal() {
+export default async function ContactModal() {
+  const author = await getAuthor();
+
   return (
     <Modal title="콘택트">
       <div className="space-y-4">

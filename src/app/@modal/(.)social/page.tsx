@@ -1,6 +1,10 @@
+import { getAuthor } from "@/actions/getAuthor";
 import Modal from "@/components/modal";
+import Link from "next/link";
+// props 생성하기
 
-export default function SocialModal() {
+export default async function SocialModal() {
+  const author = await getAuthor();
   return (
     <Modal title="소셜">
       <div className="space-y-4">
@@ -8,8 +12,8 @@ export default function SocialModal() {
           다양한 소셜 플랫폼에서 만나보세요!
         </p>
         <div className="space-y-3">
-          <a
-            href="#"
+          <Link
+            href={author.instagramLink}
             className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50 transition-colors"
           >
             <span className="text-lg">📷</span>
@@ -17,9 +21,9 @@ export default function SocialModal() {
               <h3 className="font-medium text-sm">Instagram</h3>
               <p className="text-xs text-gray-500">@phimstudio</p>
             </div>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href={author.naverBlogLink}
             className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50 transition-colors"
           >
             <span className="text-lg">🐙</span>
@@ -27,29 +31,7 @@ export default function SocialModal() {
               <h3 className="font-medium text-sm">GitHub</h3>
               <p className="text-xs text-gray-500">github.com/phimstudio</p>
             </div>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50 transition-colors"
-          >
-            <span className="text-lg">💼</span>
-            <div>
-              <h3 className="font-medium text-sm">LinkedIn</h3>
-              <p className="text-xs text-gray-500">
-                linkedin.com/in/phimstudio
-              </p>
-            </div>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 p-3 border rounded-lg hover:bg-gray-50 transition-colors"
-          >
-            <span className="text-lg">🐦</span>
-            <div>
-              <h3 className="font-medium text-sm">Twitter</h3>
-              <p className="text-xs text-gray-500">@phimstudio</p>
-            </div>
-          </a>
+          </Link>
         </div>
         <div className="pt-4 border-t">
           <p className="text-xs text-gray-500">

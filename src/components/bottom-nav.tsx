@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 
 const BottomNav = () => {
   const pathname = usePathname();
+  // studio 에서는 가림
+  const isStudio = pathname.includes("/studio");
+  if (isStudio) return null;
 
   const navItems = [
     { name: "홈", href: "/", icon: "🏠" },
