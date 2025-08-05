@@ -5,7 +5,7 @@ export default async function ContactModal() {
   const author = await getAuthor();
 
   return (
-    <Modal title="콘택트">
+    <Modal title={`콘택트 - ${author.name}`}>
       <div className="space-y-4">
         <p className="text-sm text-gray-600">
           안녕하세요! 연락을 원하시면 아래 정보를 이용해주세요.
@@ -13,15 +13,15 @@ export default async function ContactModal() {
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-lg">📧</span>
-            <span className="text-sm">contact@phimstudio.com</span>
+            <span className="text-sm">{author.email}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-lg">📱</span>
-            <span className="text-sm">+82 10-1234-5678</span>
+            <span className="text-sm">{author.phone}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-lg">🏠</span>
-            <span className="text-sm">Seoul, South Korea</span>
+            <span className="text-sm">{author.location}</span>
           </div>
         </div>
         <div className="pt-4 border-t">

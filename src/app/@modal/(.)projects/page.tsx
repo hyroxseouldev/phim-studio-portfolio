@@ -12,7 +12,7 @@ export default async function ProjectsModal() {
         </p>
         <div className="space-y-3">
           {projects.map((project) => (
-            <div className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={project._id} className="p-3 border rounded-lg hover:bg-gray-50 transition-colors">
               <h3 className="font-medium text-sm">{project.title}</h3>
               <p className="text-xs text-gray-500 mt-1">
                 {project.description}

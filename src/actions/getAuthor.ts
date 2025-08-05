@@ -9,6 +9,9 @@ const AUTHOR_QUERY = `*[_type == "author" && name == $name][0] {
   name,
   instagramLink,
   naverBlogLink,
+  email,
+  phone,
+  location
 }`;
 
 type Author = {
@@ -16,6 +19,9 @@ type Author = {
   name: string;
   instagramLink: string;
   naverBlogLink: string;
+  email: string;
+  phone: string;
+  location: string;
 };
 
 export async function getAuthor(): Promise<Author> {
