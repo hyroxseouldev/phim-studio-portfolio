@@ -78,9 +78,9 @@ export const projectType = defineType({
       ],
     }),
     defineField({
-      name: "categories",
-      type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "works" } })],
+      name: "works",
+      type: "reference",
+      to: { type: "works" },
     }),
     defineField({
       name: "publishedAt",
